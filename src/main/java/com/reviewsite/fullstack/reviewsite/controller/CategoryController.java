@@ -5,14 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.Resource;
+
 @Controller
 public class CategoryController {
 
+    @Resource
     CategoryRepository categoryRepo;
 
-    public CategoryController(CategoryRepository categoryRepo){
-        this.categoryRepo = categoryRepo;
-    }
 
     @RequestMapping("categories")
     public String showAllCategories(Model model){
@@ -20,6 +20,4 @@ public class CategoryController {
         return "categoriesTemplate";
     }
 
-//    @RequestMapping("categories/{categoryName}")
-//    public String
 }

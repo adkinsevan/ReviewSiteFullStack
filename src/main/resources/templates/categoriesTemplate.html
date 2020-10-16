@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="/style.css" rel="stylesheet"/>
+    <title>Categories tab</title>
 </head>
 <body>
+<header>
+    <h1>
+        Categories
+    </h1>
+</header>
+<main>
+    <p>Categories Of Albums</p>
+    <div class="mainCategories">
+
+        <ul>
+            <li class="categories" th:each="category: ${categoryNames}">
+                <a class="categories" th:text="${category.name}" th:href="@{'/categories/'+${category.name}}"></a>
+            </li>
+        </ul>
+    </div>
+</main>
 
 </body>
 </html>
